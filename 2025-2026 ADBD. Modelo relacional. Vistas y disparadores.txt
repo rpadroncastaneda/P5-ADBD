@@ -1,0 +1,50 @@
+﻿Grado en Ingeniería Informática
+Administración y diseño de bases de datos
+
+
+Modelo relacional. Vistas y disparadores
+
+
+Objetivos
+Los principales objetivos de esta práctica son los siguientes:
+* Continuar desarrollando habilidades en las operaciones básicas con el SQL.
+* Desarrollar actividades básicas con vistas y disparadores.
+Descripción
+Blockbuster LLC, conocida como Blockbuster Video, fue una franquicia estadounidense de videoclubes, especializada en alquiler de películas y videojuegos a través de tiendas físicas, servicios por correo y vídeo bajo demanda. Fue una de las precursoras de plataformas como la actual Netflix. Su modelo de negocios se basaba en el alquiler de DVD de juegos y películas.
+Sobre el escenario descrito anteriormente, en esta práctica trabajaremos como una base de datos que típicamente se podría encontrar en un establecimiento en el que los clientes están registrados y pueden alquilar películas con un tiempo máximo de alquiler y su histórico de alquileres. Además, se incluyen datos sobre las películas disponibles, los empleados y las tiendas.
+Partiendo de la base de datos alquilerdvd.tar que se encuentra disponible en GitHub. Realice las siguientes actividades con la ayuda de psql y el PL/pgSQL.
+1. Realice la restauración de la base de datos alquilerdvd.tar. Observe que la base de datos no tiene un formato SQL como el empleado en actividades anteriores.
+2. Identifique las tablas, vistas y secuencias.
+3. Identifique las tablas principales y sus principales elementos.
+4. Realice las siguientes consultas.
+   1. Obtenga las ventas totales por categoría de películas ordenadas descendentemente.
+   2. Obtenga las ventas totales por tienda, donde se refleje la ciudad, el país (concatenar la ciudad y el país empleando como separador la “,”), y el encargado. Pudiera emplear GROUP BY, ORDER BY
+   3. Obtenga una lista de películas, donde se reflejen el identificador, el título, descripción, categoría, el precio, la duración de la película, clasificación, nombre y apellidos de los actores (puede realizar una concatenación de ambos). Pudiera emplear GROUP BY
+   4. Obtenga la información de los actores, donde se incluya sus nombres y apellidos, las categorías y sus películas. Los actores deben de estar agrupados y, las categorías y las películas deben estar concatenados por “:” 
+5. Realice todas las vistas de las consultas anteriores. Colóqueles el prefijo view_ a su denominación.
+6. Haga un análisis del modelo e incluya las restricciones CHECK que considere necesarias.
+7. Explique la sentencia que aparece en la tabla customer 
+Triggers: 
+last_updated BEFORE UPDATE ON customer 
+FOR EACH ROW EXECUTE PROCEDURE last_updated() 
+Identifique alguna tabla donde se utilice una solución similar. 
+8. Construya un disparador que guarde en una nueva tabla creada por usted la fecha de cuando se insertó un nuevo registro en la tabla film y el identificador del film. 
+9. Construya un disparador que guarde en una nueva tabla creada por usted la fecha de cuando se eliminó un registro en la tabla film y el identificador del film. 
+10. Comente el significado y la relevancia de las secuencias.
+Entrega
+Enlace a repositorio de GitHub donde se incluya al menos lo siguiente:
+* Base de datos en un fichero comprimido en formato SQL.
+* Breve informe en PDF donde incluya las interrogantes indicadas en la sección descripción. También puede escribir la información requerida usando el Readme.md del repositorio. Debe incluir las imágenes y fragmentos de código que sean necesarias para ilustrar claramente qué pasos ha realizado, los motivos de éstos y los resultados obtenidos.
+Observaciones
+* La práctica puede ser realizada por parejas. Si éste es su caso, incluya el nombre de los integrantes de la pareja en la entrega y realicen el envío ambos a través de la actividad habilitada en el campus virtual de la asignatura.
+* Si el repositorio de GitHub es privado envite a cexposit@ull.edu.es para poder consultarlo.
+Anexo. Esquema de la base de datos
+  
+
+
+
+
+
+
+
+ull.es

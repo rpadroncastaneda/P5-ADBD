@@ -1,0 +1,11 @@
+CREATE TABLE film_inserts (
+    id SERIAL PRIMARY KEY,
+    film_id INT NOT NULL,
+    insert_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE film_deletes (
+    id SERIAL PRIMARY KEY,
+    film_id INT NOT NULL,
+    delete_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
